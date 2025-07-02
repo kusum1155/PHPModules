@@ -1,0 +1,60 @@
+<!--
+Database Wireframe for Stylish Calculator (index.php)
+This wireframe shows a possible table structure if you want to store calculation history.
+-->
+<html>
+<head>
+    <title>Calculator Database Wireframe</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8fafc; padding: 2rem; }
+        .db-box { border: 2px dashed #888; border-radius: 1rem; width: 420px; margin: 2rem auto; background: #fff; }
+        .db-title { text-align: center; font-size: 1.3rem; font-weight: bold; margin: 1.2rem 0 0.5rem 0; }
+        .db-table { width: 90%; margin: 1.5rem auto; border-collapse: collapse; }
+        .db-table th, .db-table td { border: 1px solid #bbb; padding: 0.7rem 1rem; text-align: left; }
+        .db-table th { background: #e3f6fc; }
+        .db-table tr:nth-child(even) { background: #f7fbfd; }
+    </style>
+</head>
+<body>
+    <div class="db-box">
+        <div class="db-title">Table: calculations</div>
+        <table class="db-table">
+            <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>INT (Primary Key, Auto Increment)</td>
+                <td>Unique identifier for each calculation</td>
+            </tr>
+            <tr>
+                <td>num1</td>
+                <td>FLOAT</td>
+                <td>First number</td>
+            </tr>
+            <tr>
+                <td>operation</td>
+                <td>VARCHAR(10)</td>
+                <td>Operation performed (add, subtract, multiply, divide)</td>
+            </tr>
+            <tr>
+                <td>num2</td>
+                <td>FLOAT</td>
+                <td>Second number</td>
+            </tr>
+            <tr>
+                <td>result</td>
+                <td>VARCHAR(50)</td>
+                <td>Result of calculation (number or error message)</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>DATETIME</td>
+                <td>Timestamp of calculation</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

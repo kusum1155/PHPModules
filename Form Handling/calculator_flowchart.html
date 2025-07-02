@@ -1,0 +1,46 @@
+<!--
+Flowchart for Stylish Calculator (index.php)
+This is a simple flowchart using Mermaid.js syntax for visualization.
+-->
+<html>
+<head>
+    <title>Calculator Flowchart</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+      body { font-family: Arial, sans-serif; background: #f8fafc; padding: 2rem; }
+      .mermaid { background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px #e0e0e0; padding: 2rem; margin: 2rem auto; max-width: 700px; }
+      h2 { text-align: center; color: #2d6a8c; }
+    </style>
+</head>
+<body>
+    <h2>Calculator Flowchart</h2>
+    <div class="mermaid">
+      graph TD
+        A[User opens Calculator Form] --> B[User enters First Number]
+        B --> C[User selects Operation]
+        C --> D[User enters Second Number]
+        D --> E[User clicks Calculate]
+        E --> F{Is Request POST?}
+        F -- Yes --> G[Get num1, num2, operation from POST]
+        G --> H{Which Operation?}
+        H -- Add --> I[Result = num1 + num2]
+        H -- Subtract --> J[Result = num1 - num2]
+        H -- Multiply --> K[Result = num1 * num2]
+        H -- Divide --> L{Is num2 == 0?}
+        L -- Yes --> M[Result = Error: Division by zero]
+        L -- No --> N[Result = num1 / num2]
+        I --> O[Display Result]
+        J --> O
+        K --> O
+        M --> O
+        N --> O
+        O --> P[End]
+        F -- No --> Q[Wait for User Input]
+        Q --> B
+    </div>
+    <p style="text-align:center; color:#888;">(If Mermaid diagram does not render, use a Mermaid live editor or VS Code extension to view.)</p>
+</body>
+</html>
